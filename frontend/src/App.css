@@ -1,0 +1,67 @@
+html,
+body {
+  height: 100%;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+}
+
+.app::after {
+  content: "";
+  /* opacity: 0.9; */
+  background: url("~/public/dim7.png") no-repeat center center black;
+  background-size: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+/* Rest of your CSS code */
+
+.progressBarContainer {
+  margin: 0.9rem auto;
+  width: 100%;
+  max-width: 40%;
+  position: absolute;
+  text-align: center;
+  margin-left: 30%;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-radius: 1rem !important;
+  border-color: rgba(8, 241, 241, 0.87) !important;
+}
+
+.progress {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0.8rem;
+}
+
+.progress-bar {
+  background-color: black;
+  font-size: 1.2rem;
+  height: 1.7rem !important;
+  text-align: left;
+}
+
+.progress-bar-animated {
+  background-color: rgb(18, 224, 52) !important;
+  position: relative;
+  color: rgb(252, 81, 2);
+  padding-left: 1rem;
+}
+.progress-bar-animated :hover {
+  background-color: rgb(18, 224, 52) !important;
+  position: relative;
+  color: black;
+  padding-left: 1rem;
+}
+
+.progress-bar-striped {
+  position: relative;
+}

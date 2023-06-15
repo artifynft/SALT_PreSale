@@ -1,0 +1,100 @@
+.connect_button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: rgba(2, 0, 36, 1);
+  width: auto;
+  margin-top: 0.4rem;
+  float: right;
+}
+
+.navbar_bg {
+  background: black;
+  opacity: 0.7;
+  height: 3.8rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.main_nav {
+  position: fixed;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.nav_heading {
+  color: white;
+  margin: auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-top: 0.8rem;
+  float: left;
+  margin-left: 2rem;
+  width: 30%;
+}
+
+/* .navbar_bg {
+  background: black;
+  opacity: 0.7;
+  height: 3.8rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.main_nav {
+  position: fixed;
+  width: 100%;
+  /* margin: auto; */
+/* overflow: unset; */
+/*margin-bottom: 5rem;
+  vertical-align: middle !important;
+}
+
+.nav_heading {
+  position: relative;
+  color: white;
+  margin: auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-top: 0.8rem;
+  float: left !important;
+  margin-left: 2rem;
+  width: 30%;
+}
+
+.connect_button {
+  position: sticky;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: rgba(2, 0, 36, 1);
+  width: auto;
+  margin-top: 0.4rem;
+  float: right !important;
+  margin-right: 2rem;
+} */
+/* .navbar_bg .navbar_bg .connect_button {
+  background: var(--theme-color);
+}
+
+.nav_heading .connect_button {
+  color: var(--theme-text-color);
+} */

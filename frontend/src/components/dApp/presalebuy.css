@@ -1,0 +1,189 @@
+.componentContainer {
+  width: 100%;
+}
+
+.currencycard .card {
+  position: relative;
+  display: inline-block;
+  background-color: #ffffff;
+  margin: 0.5rem;
+  min-width: 75px;
+  max-width: 75px;
+  padding: 0.8rem 0;
+  min-height: 75px;
+  max-height: 75px;
+  text-align: center;
+  vertical-align: middle;
+  color: rgb(0, 0, 0);
+  font-size: xx-small;
+}
+.card {
+  text-align: center;
+  vertical-align: bottom !important;
+  font-size: xx-small;
+}
+
+.cardactive {
+  position: relative;
+  display: inline-block;
+  background-color: #ffffff;
+  margin: 0.5rem;
+  min-width: 75px;
+  max-width: 75px;
+  padding: 0.8rem 0;
+  min-height: 75px;
+  max-height: 75px;
+  text-align: center;
+  vertical-align: middle;
+  color: rgb(0, 0, 0);
+  font-size: xx-small;
+
+  border-color: rgb(250, 94, 4);
+
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 0.3rem;
+  font-size: xx-small;
+}
+
+.separator {
+  margin: 1rem;
+}
+
+.presale {
+  margin-left: 1rem !important;
+  margin-top: -0.2rem !important;
+  margin-bottom: 0.2rem !important;
+  background-color: teal !important;
+  opacity: 0.75 !important;
+  width: 27% !important;
+  position: relative !important;
+  text-align: center !important;
+}
+
+.presale_heading,
+.presale_quote {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  margin: 0.5rem auto;
+}
+
+.presale_quote h3 {
+  color: yellowgreen !important;
+  margin-bottom: 0;
+}
+
+.border_color {
+  border-style: groove !important;
+  border-width: 1px !important;
+  border-radius: 1rem !important;
+  border-color: rgba(8, 241, 241, 0.87) !important;
+}
+
+.getKITT_Div {
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  background-color: cadetblue;
+  text-align: center;
+}
+
+.inputAddressDiv {
+  position: relative;
+  width: 85%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.address_input {
+  position: relative;
+  background-color: white;
+  width: 50%;
+  height: 3rem;
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: rgba(2, 0, 36, 1);
+  text-align: center;
+}
+
+.kittButtonDiv {
+  width: 45%;
+  margin: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 1;
+}
+
+.getOCT_button {
+  position: relative;
+  width: 85%;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  color: rgb(14, 13, 13);
+  opacity: 1;
+}
+
+.getOCT_button:hover {
+  color: rgb(250, 94, 4);
+  opacity: 1;
+  border-width: 1.3px !important;
+}
+
+.tx_data {
+  text-align: center;
+  margin: auto;
+  width: 30%;
+  background-color: black;
+  color: rgb(250, 94, 4);
+  margin-top: 1rem;
+}
+
+.tx_hash {
+  text-align: center;
+  margin: auto;
+  width: 60%;
+  color: red;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.result {
+  background-color: black;
+  text-align: left;
+  margin: auto;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.result .error {
+  color: red;
+}
+
+.result .success {
+  color: greenyellow;
+}
+
+.error-details-link {
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: rgb(250, 94, 4);
+  opacity: 1;
+}
