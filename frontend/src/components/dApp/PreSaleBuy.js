@@ -69,7 +69,7 @@ const PreSaleBuy = ({
       }
 
       try {
-        const tx = await contract.buyTokens({
+        const tx = await contract.invest({
           value: ethers.utils.parseEther(amount.toString()),
         });
 
@@ -258,8 +258,8 @@ const PreSaleBuy = ({
     );
   };
 
-  const time = new Date("06-10-2023 03:00 pm");
-  time.setSeconds(time.getSeconds() + 0); // 10 minutes timer
+  const time = new Date("06-27-2023 03:00 pm");
+  time.setSeconds(time.getSeconds() + 10); // 10 minutes timer
 
   return (
     <div className="presale border_color">

@@ -2,45 +2,77 @@ export const walletAddress = "";
 export const signer = "";
 export const fcContract = "";
 export const txData = "";
-export const CONTRACTADDRESS = "0x96B04BdD4ddbb70C85342f6a60de075cbd43dB33";
+export const CONTRACTADDRESS = "0x3A80B2581BBC8e24bc7D3547Da6EE9034e625b63";
 export const TOKENABI = [
   {
     inputs: [
-      {
-        internalType: "address payable",
-        name: "_tokenContract",
-        type: "address",
-      },
+      { internalType: "address", name: "tokenAddress", type: "address" },
     ],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
     type: "constructor",
   },
   {
     anonymous: false,
     inputs: [
-      { indexed: false, internalType: "address", name: "", type: "address" },
-      { indexed: false, internalType: "uint256", name: "", type: "uint256" },
-      { indexed: false, internalType: "address", name: "", type: "address" },
-      { indexed: false, internalType: "uint256", name: "", type: "uint256" },
+      { indexed: true, internalType: "address", name: "from", type: "address" },
+      { indexed: true, internalType: "address", name: "to", type: "address" },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "tokens",
+        type: "uint256",
+      },
     ],
-    name: "BuyTokens",
+    name: "Invest",
     type: "event",
   },
   {
     anonymous: false,
     inputs: [
-      { indexed: false, internalType: "address", name: "", type: "address" },
-      { indexed: false, internalType: "uint256", name: "", type: "uint256" },
+      { indexed: false, internalType: "address", name: "to", type: "address" },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "time",
+        type: "uint256",
+      },
     ],
-    name: "TransferTokens",
+    name: "TokenBurn",
     type: "event",
+  },
+  { stateMutability: "payable", type: "fallback" },
+  {
+    inputs: [],
+    name: "DevWallet",
+    outputs: [{ internalType: "address payable", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
   },
   {
     inputs: [],
     name: "PresaleState",
     outputs: [
-      { internalType: "enum SALT_Presale.State", name: "", type: "uint8" },
+      { internalType: "enum CAPTAIN_PRESALE.State", name: "", type: "uint8" },
     ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "admin",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
@@ -56,23 +88,29 @@ export const TOKENABI = [
   },
   {
     inputs: [],
-    name: "availableTokens",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "_address", type: "address" }],
-    name: "balanceOf",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "buyTokens",
+    name: "burn",
     outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "_newAdmin", type: "address" }],
+    name: "changeAdmin",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address payable",
+        name: "_newPresaleWallet",
+        type: "address",
+      },
+    ],
+    name: "changePresaleWallet",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -107,6 +145,13 @@ export const TOKENABI = [
   },
   {
     inputs: [],
+    name: "getPresaleTokenBalance",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "haltPresale",
     outputs: [],
     stateMutability: "nonpayable",
@@ -121,21 +166,35 @@ export const TOKENABI = [
   },
   {
     inputs: [],
-    name: "maxContribLimit",
+    name: "invest",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "", type: "address" }],
+    name: "investedAmountOf",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "_investor", type: "address" }],
+    name: "investorBalanceOf",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
-    name: "minContribLimit",
+    name: "maxInvestment",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
-    name: "presaleContractETHBalance",
+    name: "minInvestment",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
@@ -149,14 +208,14 @@ export const TOKENABI = [
   },
   {
     inputs: [],
-    name: "presaleEndsDate",
+    name: "presaleStartTime",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
-    name: "presaleStartTime",
+    name: "raisedAmount",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
@@ -178,22 +237,15 @@ export const TOKENABI = [
   {
     inputs: [],
     name: "token",
-    outputs: [{ internalType: "contract ERC20", name: "", type: "address" }],
+    outputs: [{ internalType: "contract IERC20", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "_ETHToSell", type: "uint256" }],
+    inputs: [],
     name: "tokenPrice",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "transferTokens",
-    outputs: [],
-    stateMutability: "payable",
+    stateMutability: "view",
     type: "function",
   },
   { stateMutability: "payable", type: "receive" },
