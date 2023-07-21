@@ -27,13 +27,13 @@ const PreSaleBuy = ({
   const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
   const calculateTokens = (ethAmount) => {
-    var tokenPrice = 0.0001; // NTC as appropriate for token and eth conversion- Represents one token in eth
+    var tokenPrice = 0.0000000001; // NTC as appropriate for token and eth conversion- Represents one token in eth
     var tokenAmount = ethAmount / tokenPrice;
     return tokenAmount;
   };
 
   const validateAmount = (value) => {
-    if (value < 0.00000001) {
+    if (value < 0.0000000001) {
       setErrors((prevErrors) => [
         ...prevErrors,
         "The amount you entered is too low. Please provide an amount greater than or equal to 0.00000001.",
